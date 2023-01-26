@@ -1,0 +1,65 @@
+@mixin flexCenter {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+@mixin flexCenter2 {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+@mixin flexCenter3 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin flexCenter4 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+@mixin flexCenter5 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    text-align: center;
+}
+
+@mixin positionAbsolute {
+    position: absolute;
+    transform: translate(-50%, -50%);
+}
+
+@mixin border {
+    border: 5px solid $borderColor2;
+    border-style: double;
+    background-color: transparent;
+    border-radius: 5px;
+}
+
+@mixin border2 {
+    border: 5px solid $borderColor;
+    background-color: transparent;
+    border-radius: 5px;
+    border-style: double;
+}
+
+@mixin arrow {
+    @include positionAbsolute;
+    color: $arrowColor;
+    text-shadow: 0 20px 30px $textShadow;
+    font-weight: bold;
+    font-size: 4.5rem;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+    animation-name: movingArrow;
+    animation-duration: 8s;
+    animation-iteration-count: infinite;
+}
