@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js"
+        integrity="sha512-odNmoc1XJy5x1TMVMdC7EMs3IVdItLPlCeL5vSUPN2llYKMJ2eByTTAIiiuqLg+GdNr9hF6z81p27DArRFKT7A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- material icons -->
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+    <link rel="stylesheet" href="./styles/dist/statistic.css">
+    <!-- async script -->
+    <script src="./dist/index.js" async></script>
+    <title>statistic</title>
+</head>
+
+<body>   
+        <div class="playersListContainer">
+            <span class="material-icons arrow-back-to-game" onclick="handleBackToGame()">arrow_back</span>
+            <div class="playersListContainer__playersList" id="playersListRoot"></div>
+        </div>
+
+        <div class="generalStatisticContainer">
+            <p class="generalStatisticContainer__title">General st<span><img
+                        class="generalStatisticContainer__title__smilyImgStatistic" src="./styles/img/smily.png"></span>
+                <span style="display: none;">a</span> tistic
+            </p>
+            <div class="generalStatisticContainer__bestTime" id="bestTime"></div>
+            <div class="generalStatisticContainer__generalStatistic" id="statisticRoot"></div>
+        </div>
+  
+    <script type="text/javascript" async>
+        window.onload = function () {
+            loadPlayersList();
+            pulseStatistic();
+        };
+    </script>
+</body>
+
+</html>

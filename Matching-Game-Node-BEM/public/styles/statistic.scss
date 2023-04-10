@@ -1,0 +1,160 @@
+@import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
+@import './var';
+@import './mixin';
+
+* {
+    box-sizing: border-box;
+    font-family: 'Russo One', sans-serif;
+}
+
+body {
+    background: url('../img/bg.jpg') center center fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+}
+
+.generalStatisticContainer {
+
+    &__title {
+        @include positionAbsolute;
+        top: 1%;
+        left: 50%;
+        color: $titleColor;
+        font-size: 2.4em;
+        font-weight: bold;
+        letter-spacing: 8px;
+        text-shadow: 0 10px 20px $textShedow2;
+
+        &__smilyImgStatistic {
+            position: absolute;
+            width: 1.9rem;
+            top: 19%;
+            left: 60.4%;
+            opacity: .7;
+            transition: all .5s ease;
+        }
+    }
+
+    &__generalStatistic,
+    &__bestTime {
+        @include positionAbsolute;
+        display: flex;
+        flex-direction: column;
+        font-size: 1.5em;
+        color: $titleColor;
+        text-shadow: 0 10px 20px $textShedow2;
+        @include border;
+        box-shadow: 0 5px 20px $boxShedow;
+        padding: 0;
+    }
+
+    &__bestTime {
+        top: 20%;
+        left: 50%;
+        width: 30%;
+        justify-content: center;
+        text-align: center;
+        letter-spacing: 2px;
+
+        .user-icon {
+            font-size: 2rem;
+            color: $userIconColor;
+        }
+    }
+
+    &__generalStatistic {
+        top: 55%;
+        left: 50%;
+        width: 38%;
+
+        &__innerTitle {
+            display: flex;
+            justify-content: center;
+            letter-spacing: 2px;
+            font-size: 1.5rem;
+        }
+
+        &__info-time,
+        &__info-flips {
+            display: flex;
+            text-align: center;
+            justify-content: space-between;
+            padding: 0 4.5rem 0 4.5rem;
+        }
+
+        .user-icon {
+            font-size: 2rem;
+            color: $userIconColor;
+        }
+
+        &__gen-stat-inner {
+            @include flexCenter2;
+            justify-content: space-between;
+        }
+    }
+
+}
+
+.playersListContainer {
+
+    &__playersList {
+        @include positionAbsolute;
+        top: 50%;
+        left: 13%;
+        width: 20%;
+        font-size: 25px;
+        font-weight: bold;
+        letter-spacing: 2px;
+        @include flexCenter4;
+        text-align: center;
+        color: $titleColor;
+        text-shadow: 0 10px 20px $textShedow2;
+        @include border;
+        box-shadow: 0 5px 20px $boxShedow;
+        font-size: 1.5em;
+        padding: 0;
+
+        &__playersList-inner {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            text-align: center;
+        }
+
+        .user-icon {
+            font-size: 2.1rem;
+            color: $userIconColor;
+        }
+
+    }
+
+    .arrow-back-to-game {
+        @include arrow;
+        top: 6%;
+        left: 12%;
+
+        @keyframes movingArrow {
+            0% {
+                left: 12%;
+            }
+
+            50% {
+                left: 11%;
+            }
+
+            100% {
+                left: 12%;
+            }
+        }
+
+        &:hover {
+            color: $arrowHover;
+            animation-play-state: paused;
+        }
+    }
+
+}

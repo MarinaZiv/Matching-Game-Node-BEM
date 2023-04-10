@@ -1,0 +1,154 @@
+@import url("https://fonts.googleapis.com/css2?family=Russo+One&display=swap");
+* {
+  box-sizing: border-box;
+  font-family: "Russo One", sans-serif;
+}
+
+body {
+  background: url("../img/bg.jpg") center center fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 100vh;
+  padding: 0;
+  margin: 0;
+}
+
+.generalStatisticContainer__title {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 1%;
+  left: 50%;
+  color: rgba(45, 31, 18, 0.4);
+  font-size: 2.4em;
+  font-weight: bold;
+  letter-spacing: 8px;
+  text-shadow: 0 10px 20px rgba(10, 10, 11, 0.4);
+}
+.generalStatisticContainer__title__smilyImgStatistic {
+  position: absolute;
+  width: 1.9rem;
+  top: 19%;
+  left: 60.4%;
+  opacity: 0.7;
+  transition: all 0.5s ease;
+}
+.generalStatisticContainer__generalStatistic, .generalStatisticContainer__bestTime {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  font-size: 1.5em;
+  color: rgba(45, 31, 18, 0.4);
+  text-shadow: 0 10px 20px rgba(10, 10, 11, 0.4);
+  border: 5px solid rgba(110, 20, 10, 0.4);
+  border-style: double;
+  background-color: transparent;
+  border-radius: 5px;
+  box-shadow: 0 5px 20px rgba(0, 8, 40, 0.4);
+  padding: 0;
+}
+.generalStatisticContainer__bestTime {
+  top: 20%;
+  left: 50%;
+  width: 30%;
+  justify-content: center;
+  text-align: center;
+  letter-spacing: 2px;
+}
+.generalStatisticContainer__bestTime .user-icon {
+  font-size: 2rem;
+  color: rgba(130, 29, 18, 0.5);
+}
+.generalStatisticContainer__generalStatistic {
+  top: 55%;
+  left: 50%;
+  width: 38%;
+}
+.generalStatisticContainer__generalStatistic__innerTitle {
+  display: flex;
+  justify-content: center;
+  letter-spacing: 2px;
+  font-size: 1.5rem;
+}
+.generalStatisticContainer__generalStatistic__info-time, .generalStatisticContainer__generalStatistic__info-flips {
+  display: flex;
+  text-align: center;
+  justify-content: space-between;
+  padding: 0 4.5rem 0 4.5rem;
+}
+.generalStatisticContainer__generalStatistic .user-icon {
+  font-size: 2rem;
+  color: rgba(130, 29, 18, 0.5);
+}
+.generalStatisticContainer__generalStatistic__gen-stat-inner {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: space-between;
+}
+
+.playersListContainer__playersList {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 13%;
+  width: 20%;
+  font-size: 25px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  text-align: center;
+  color: rgba(45, 31, 18, 0.4);
+  text-shadow: 0 10px 20px rgba(10, 10, 11, 0.4);
+  border: 5px solid rgba(110, 20, 10, 0.4);
+  border-style: double;
+  background-color: transparent;
+  border-radius: 5px;
+  box-shadow: 0 5px 20px rgba(0, 8, 40, 0.4);
+  font-size: 1.5em;
+  padding: 0;
+}
+.playersListContainer__playersList__playersList-inner {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+}
+.playersListContainer__playersList .user-icon {
+  font-size: 2.1rem;
+  color: rgba(130, 29, 18, 0.5);
+}
+.playersListContainer .arrow-back-to-game {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  color: rgba(45, 31, 18, 0.3);
+  text-shadow: 0 20px 30px rgba(39, 28, 17, 0.5);
+  font-weight: bold;
+  font-size: 4.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  animation-name: movingArrow;
+  animation-duration: 8s;
+  animation-iteration-count: infinite;
+  top: 6%;
+  left: 12%;
+}
+@keyframes movingArrow {
+  0% {
+    left: 12%;
+  }
+  50% {
+    left: 11%;
+  }
+  100% {
+    left: 12%;
+  }
+}
+.playersListContainer .arrow-back-to-game:hover {
+  color: rgba(119, 3, 3, 0.5);
+  animation-play-state: paused;
+}

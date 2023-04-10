@@ -1,0 +1,262 @@
+@import url("https://fonts.googleapis.com/css2?family=BIZ+UDPMincho&family=Cairo:wght@300&family=Josefin+Sans:wght@300&family=Montserrat:wght@100;200&family=Rajdhani:wght@300&family=Red+Hat+Mono:wght@300;400&family=Special+Elite&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Russo+One&display=swap");
+* {
+  box-sizing: border-box;
+  font-family: "Russo One", sans-serif;
+}
+
+body {
+  background: url("../img/bg.jpg") center center fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  height: 100vh;
+  padding: 0;
+  margin: 0;
+}
+
+.game__titleGame {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 1%;
+  left: 50%;
+  color: rgba(45, 31, 18, 0.4);
+  font-size: 2.4em;
+  font-weight: bold;
+  letter-spacing: 8px;
+  text-shadow: 0 10px 20px rgba(10, 10, 11, 0.4);
+}
+.game__titleGame__smilyImgGame {
+  position: absolute;
+  width: 1.8rem;
+  top: 24%;
+  left: 73.5%;
+  opacity: 0.7;
+  transition: all 0.5s ease;
+}
+.game__titleGame__smilyImgGame:hover {
+  transform: scale(1.5);
+}
+.game__containerGame {
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  position: absolute;
+  transform: translate(-50%, -50%);
+  justify-content: center;
+  margin: 25px auto;
+  grid-gap: 15px 20px;
+  perspective: 700px;
+  top: 50%;
+  left: 50%;
+}
+.game__containerGame__card {
+  position: relative;
+  cursor: pointer;
+  height: 160px;
+  width: 115px;
+  border-radius: 8px;
+  transform-style: preserve-3d;
+  transition: all 0.8s ease;
+  box-shadow: rgba(10, 0, 29, 0.4) 0px 10px 25px, rgba(10, 0, 30, 0.4) 0px 5px 10px;
+}
+.game__containerGame__card:hover {
+  transform: scale(0.97);
+  box-shadow: 3px 10px 20px rgba(17, 3, 44, 0.4);
+}
+.game__containerGame__card__face {
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 500ms ease-in-out;
+  backface-visibility: hidden;
+  width: 115px;
+  height: 160px;
+  border-radius: 10px;
+}
+.game__containerGame__card__back {
+  background: url("../img/back.jpg");
+  transform: rotateY(0deg);
+}
+.game__containerGame__card__front {
+  transform: rotateY(180deg);
+}
+
+.info__gameButtons {
+  display: flex;
+  gap: 2rem;
+  position: absolute;
+  top: 4%;
+  left: 5.7%;
+}
+.info__gameButtons--newGameBtm, .info__gameButtons--statisticBtn {
+  font-size: 1.2rem;
+  font-weight: normal;
+  color: rgba(45, 31, 18, 0.4);
+  text-shadow: 0 15px 25px rgba(10, 10, 11, 0.4);
+  box-shadow: 0 5px 20px rgba(0, 8, 40, 0.4);
+  border: 5px solid rgba(110, 20, 10, 0.3);
+  background-color: transparent;
+  border-radius: 5px;
+  border-style: double;
+  padding: 0.2em 0.7em;
+  letter-spacing: 2px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+}
+.info__gameButtons--newGameBtm:hover, .info__gameButtons--statisticBtn:hover {
+  box-shadow: 5px 10px 20px 3px 10px 20px rgba(17, 3, 44, 0.4);
+}
+.info__statistics {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 44%;
+  left: 15%;
+  text-align: center;
+  width: 20%;
+  height: 59%;
+  font-size: 2.5rem;
+  color: rgba(45, 31, 18, 0.4);
+  border: 5px solid rgba(110, 20, 10, 0.4);
+  border-style: double;
+  background-color: transparent;
+  border-radius: 5px;
+  border: 7px solid rgba(110, 20, 10, 0.4);
+  box-shadow: 0 5px 20px rgba(0, 8, 40, 0.4);
+  border-style: double;
+  border-radius: 5px;
+}
+.info__statistics__title, .info__statistics__info-player, .info__statistics__info-flips, .info__statistics__info-time {
+  position: relative;
+}
+.info__statistics__title {
+  max-width: 85%;
+  top: -5%;
+  color: rgba(45, 31, 18, 0.4);
+  font-size: 1.3rem;
+  font-weight: normal;
+  letter-spacing: 5px;
+  text-shadow: 0 20px 30px 3px 10px 20px rgba(17, 3, 44, 0.4);
+  border: 5px solid rgba(110, 20, 10, 0.3);
+  box-shadow: 0 15px 30px rgba(0, 5, 23, 0.3);
+  border-style: double;
+  padding: 0.2em 0.9em;
+}
+.info__statistics--infoPlayer, .info__statistics--infoFlips, .info__statistics--infoTime {
+  text-shadow: 0 10px 20px rgba(10, 10, 11, 0.4);
+}
+.info__statistics--infoPlayer {
+  top: -14%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+.info__statistics--infoPlayer .user-icon {
+  font-size: 2rem;
+  color: rgba(130, 29, 18, 0.5);
+}
+.info__statistics .user-icon,
+.info__statistics .user-icon {
+  font-size: 2.1rem;
+  color: rgba(130, 29, 18, 0.5);
+}
+.info__statistics--infoFlips {
+  top: -15%;
+}
+.info__statistics--infoTime {
+  top: -12%;
+}
+.info .arrow-back-to-login {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  color: rgba(45, 31, 18, 0.3);
+  text-shadow: 0 20px 30px rgba(39, 28, 17, 0.5);
+  font-weight: bold;
+  font-size: 4.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  animation-name: movingArrow;
+  animation-duration: 8s;
+  animation-iteration-count: infinite;
+  top: 80%;
+  left: 12%;
+}
+@keyframes movingArrow {
+  0% {
+    left: 12%;
+  }
+  50% {
+    left: 11%;
+  }
+  100% {
+    left: 12%;
+  }
+}
+.info .arrow-back-to-login:hover {
+  color: rgba(119, 3, 3, 0.5);
+  animation-play-state: paused;
+}
+
+.winning-message {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  top: 0;
+  background-color: rgba(110, 20, 10, 0.374);
+  font-family: "Russo One", sans-serif;
+  color: rgba(65, 23, 11, 0.534);
+  font-weight: bold;
+  font-size: 4rem;
+}
+.winning-message img {
+  animation: scale 2000ms ease-in-out forwards;
+  z-index: -1;
+}
+@keyframes scale {
+  to {
+    transform: scale(1.25);
+  }
+}
+.winning-message .message-buttons {
+  display: flex;
+  flex-direction: column;
+  margin-top: 0.5em;
+}
+.winning-message .message-buttons .statisticBtn {
+  font-size: 0.2em;
+  font-weight: normal;
+  letter-spacing: 0.2em;
+  background-color: rgba(45, 31, 18, 0.797);
+  color: rgba(255, 255, 255, 0.303);
+  border: 0.5px solid black;
+  padding: 0.2rem 0.5rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all ease-in-out 0.3s;
+  margin: 0.3em;
+  z-index: 1;
+}
+.winning-message .message-buttons .statisticBtn:hover {
+  background-color: rgba(45, 31, 18, 0.624);
+  color: rgba(255, 255, 255, 0.52);
+  border-color: rgba(255, 255, 255, 0.335);
+}
+
+.winning-message.show {
+  display: flex;
+}

@@ -1,0 +1,199 @@
+@import url('https://fonts.googleapis.com/css2?family=BIZ+UDPMincho&family=Cairo:wght@300&family=Josefin+Sans:wght@300&family=Montserrat:wght@100;200&family=Rajdhani:wght@300&family=Red+Hat+Mono:wght@300;400&family=Special+Elite&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
+@import './var';
+@import './mixin';
+
+* {
+    box-sizing: border-box;
+    font-family: 'Russo One', sans-serif;
+}
+
+body {
+    background: url('../img/bg.jpg') center center fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    @include flexCenter5;
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+    color: rgba(45, 31, 18, 0.525);   
+}
+
+.loginPageContainer {
+    @include flexCenter;
+    width: 40%;
+
+    form,
+    &__userLoginError,
+    .registerLink {
+        transform: translate(-50%, -50%);
+        left: 50%;
+    }
+
+    .registerLink {
+        position: relative;
+        top: -160%;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: bold;
+        font-size: 1.4rem;
+    }
+
+    form {
+        position: absolute;
+        top: 50%;
+
+        input[type=text],
+        input[type=submit],
+        input[type=password] {
+            @include border;
+            color: $placeholder2;
+            text-shadow: 0 20px 30px $textShedow2;
+            box-shadow: 1px 3px 15px $boxShedow2;
+            padding: .2em .7em;
+            font-weight: bold;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        input[type=submit] {
+            font-size: 1.3rem;
+            cursor: pointer;
+            transition: all .3s ease;
+            text-shadow: 2px 8px 20px $boxShedow4;
+
+            &:hover {
+                box-shadow: 5px 10px 20px $boxShedow;
+            }
+        }
+
+        input[type=text],
+        input[type=password] {
+            font-size: 1.3rem;
+            letter-spacing: 2px;
+            outline: none;
+        }
+
+        ::placeholder {
+            color: $placeholder2;
+        }
+    }
+
+    &__userLoginError {
+        position: absolute;
+        top: 60%;
+        font-family: 'Montserrat', sans-serif;
+        font-weight: bold;
+        font-size: 1.4rem;
+    }
+
+    &__title {
+         text-shadow: 0 10px 20px $textShedow2;
+        position: absolute;
+        top: 0%;
+        left: 33%;
+        font-size: 3.8em;
+        letter-spacing: 7px;
+
+        &__smilyImg {
+            position: absolute;
+            width: 2.3rem;
+            top: 29%;
+            left: 73.8%;
+            opacity: .7;
+        }
+    }
+
+}
+
+// login page animation
+.crossfade {
+    @include positionAbsolute;
+    top: 35%;
+    left: 12%;
+    width: 5%;
+    border: 1px solid $borderColor3;
+    box-shadow: 5px 20px 25px black;
+    border-radius: 8px;
+    transform: perspective(600px) rotateY(20deg) rotateX(10deg);
+}
+
+#crossfade>img {
+    opacity: 0;
+    z-index: 0;
+    -webkit-backface-visibility: hidden;
+    -webkit-animation: imageAnimation 40s linear infinite 0s;
+    -moz-animation: imageAnimation 40s linear infinite 0s;
+    -o-animation: imageAnimation 40s linear infinite 0s;
+    -ms-animation: imageAnimation 40s linear infinite 0s;
+    animation: imageAnimation 40s linear infinite 0s;
+}
+
+#crossfade>img:nth-child(1) {
+    -webkit-animation-delay: 1s;
+    -moz-animation-delay: 1s;
+    -o-animation-delay: 1s;
+    -ms-animation-delay: 1s;
+    animation-delay: 1s;
+}
+
+#crossfade>img:nth-child(2) {
+    -webkit-animation-delay: 9s;
+    -moz-animation-delay: 9s;
+    -o-animation-delay: 9s;
+    -ms-animation-delay: 9s;
+    animation-delay: 9s;
+}
+
+#crossfade>img:nth-child(3) {
+    -webkit-animation-delay: 17s;
+    -moz-animation-delay: 17s;
+    -o-animation-delay: 17s;
+    -ms-animation-delay: 17s;
+    animation-delay: 17s;
+}
+
+#crossfade>img:nth-child(4) {
+    -webkit-animation-delay: 25s;
+    -moz-animation-delay: 25s;
+    -o-animation-delay: 25s;
+    -ms-animation-delay: 25s;
+    animation-delay: 25s;
+}
+
+#crossfade>img:nth-child(5) {
+    -webkit-animation-delay: 33s;
+    -moz-animation-delay: 33s;
+    -o-animation-delay: 33s;
+    -ms-animation-delay: 33s;
+    animation-delay: 33s;
+}
+
+@keyframes imageAnimation {
+    0% {
+        opacity: 0;
+        animation-timing-function: ease-in;
+        transform: scale(1) rotate(-70deg) rotateY(-70deg) rotateX(20deg) rotateZ(-35deg);
+    }
+
+    8% {
+        opacity: .4;
+        animation-timing-function: ease-out-out;
+        transform: scale(3);
+    }
+
+    17% {
+        opacity: .2;
+        transform: rotate(10deg) rotateY(60deg) rotateZ(15deg);
+    }
+
+    25% {
+        opacity: 0;
+        transform: scale(2);
+    }
+
+    100% {
+        opacity: 0;
+        left: -100%;
+        top: -150%;
+        transform: rotate(-20deg) scale(.7);
+    }
+}

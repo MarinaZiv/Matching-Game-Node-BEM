@@ -1,0 +1,284 @@
+@import url('https://fonts.googleapis.com/css2?family=BIZ+UDPMincho&family=Cairo:wght@300&family=Josefin+Sans:wght@300&family=Montserrat:wght@100;200&family=Rajdhani:wght@300&family=Red+Hat+Mono:wght@300;400&family=Special+Elite&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
+@import './var';
+@import './mixin';
+
+* {
+    box-sizing: border-box;
+    font-family: 'Russo One', sans-serif;
+}
+
+body {
+    background: url('../img/bg.jpg') center center fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+    @include flexCenter2;
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+}
+
+.game {
+
+    &__titleGame {
+        @include positionAbsolute;
+        top: 1%;
+        left: 50%;
+        color: $titleColor;
+        font-size: 2.4em;
+        font-weight: bold;
+        letter-spacing: 8px;
+        text-shadow: 0 10px 20px $textShedow2;
+
+        &__smilyImgGame {
+            position: absolute;
+            width: 1.8rem;
+            top: 24%;
+            left: 73.5%;
+            opacity: .7;
+            transition: all .5s ease;
+
+            &:hover {
+                transform: scale(1.5);
+            }
+        }
+    }
+
+    &__containerGame {
+        display: grid;
+        grid-template-columns: repeat(4, auto);
+        @include positionAbsolute;
+        justify-content: center;
+        margin: 25px auto;
+        grid-gap: 15px 20px;
+        perspective: 700px;
+        top: 50%;
+        left: 50%;
+
+        &__card {
+            position: relative;
+            cursor: pointer;
+            height: 160px;
+            width: 115px;
+            border-radius: 8px;
+            transform-style: preserve-3d;
+            transition: all .8s ease;
+            box-shadow: $boxShedow3;
+
+            &:hover {
+                transform: scale(0.97);
+                box-shadow: $hoverShedow;
+            }
+
+            &__face {
+                position: absolute;
+                @include flexCenter3;
+                transition: transform 500ms ease-in-out;
+                backface-visibility: hidden;
+                width: 115px;
+                height: 160px;
+                border-radius: 10px;
+            }
+
+            &__back {
+                background: url('../img/back.jpg');
+                transform: rotateY(0deg);
+            }
+
+            &__front {
+                transform: rotateY(180deg);
+            }
+        }
+    }
+
+}
+
+.info {
+
+    &__gameButtons {
+        display: flex;
+        gap: 2rem;
+        position: absolute;
+        top: 4%;
+        left: 5.7%;
+
+        &--newGameBtm,
+        &--statisticBtn {
+            font-size: 1.2rem;
+            font-weight: normal;
+            color: $titleColor;
+            text-shadow: 0 15px 25px $textShedow2;
+            box-shadow: 0 5px 20px $boxShedow;
+            @include border2;
+            padding: .2em .7em;
+            letter-spacing: 2px;
+            transition: all .3s ease;
+            cursor: pointer;
+
+            &:hover {
+                box-shadow: 5px 10px 20px $hoverShedow;
+            }
+        }
+    }
+
+    &__statistics {
+        @include flexCenter4;
+        @include positionAbsolute;
+        top: 44%;
+        left: 15%;
+        text-align: center;
+        width: 20%;
+        height: 59%;
+        font-size: 2.5rem;
+        color: $textColor;
+        @include border;
+        border: 7px solid $borderColor2;
+        box-shadow: 0 5px 20px $boxShedow;
+        border-style: double;
+        border-radius: 5px;
+
+        &__title,
+        &__info-player,
+        &__info-flips,
+        &__info-time {
+            position: relative;
+        }
+
+        &__title {
+            max-width: 85%;
+            top: -5%;
+            color: $titleColor;
+            font-size: 1.3rem;
+            font-weight: normal;
+            letter-spacing: 5px;
+            text-shadow: 0 20px 30px $hoverShedow;
+            border: 5px solid $borderColor;
+            box-shadow: 0 15px 30px $boxShedow2;
+            border-style: double;
+            padding: .2em .9em;
+        }
+
+        &--infoPlayer,
+        &--infoFlips,
+        &--infoTime {
+            text-shadow: 0 10px 20px $textShedow2;
+        }
+
+
+        &--infoPlayer {
+            top: -14%;
+            @include flexCenter4;
+            flex-direction: row;
+            justify-content: space-evenly;
+
+            .user-icon {
+                font-size: 2rem;
+                color: $userIconColor;
+            }
+        }
+
+        .user-icon,
+        .user-icon {
+            font-size: 2.1rem;
+            color: $userIconColor;
+        }
+
+        &--infoFlips {
+            top: -15%;
+
+        }
+
+        &--infoTime {
+            top: -12%;
+        }
+    }
+
+    .arrow-back-to-login {
+        @include arrow;
+        top: 80%;
+        left: 12%;
+
+
+        @keyframes movingArrow {
+            0% {
+                left: 12%;
+            }
+
+            50% {
+                left: 11%;
+            }
+
+            100% {
+                left: 12%;
+            }
+        }
+
+        &:hover {
+            color: $arrowHover;
+            animation-play-state: paused;
+        }
+    }
+
+}
+
+.winning-message {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    top: 0;
+    background-color: rgba(110, 20, 10, 0.374);
+    font-family: 'Russo One', sans-serif;
+    color: rgba(65, 23, 11, 0.534);
+    font-weight: bold;
+    font-size: 4rem;
+
+    img {
+        animation: scale 2000ms ease-in-out forwards;
+        z-index: -1;
+    }
+
+    @keyframes scale {
+        to {
+            transform: scale(1.25);
+        }
+    }
+
+    .message-buttons {
+        display: flex;
+        flex-direction: column;
+        margin-top: .5em;
+
+        .statisticBtn {
+            font-size: .2em;
+            font-weight: normal;
+            letter-spacing: .2em;
+            background-color: rgba(45, 31, 18, 0.797);
+            color: rgba(255, 255, 255, 0.303);
+            border: .5px solid black;
+            padding: .2rem .5rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all ease-in-out 0.3s;
+            margin: .3em;
+            z-index: 1;
+
+            &:hover {
+                background-color: rgba(45, 31, 18, 0.624);
+                color: rgba(255, 255, 255, 0.52);
+                border-color: rgba(255, 255, 255, 0.335)
+            }
+        }
+
+    }
+
+}
+
+.winning-message.show {
+    display: flex;
+}
