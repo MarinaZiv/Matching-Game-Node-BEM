@@ -2,12 +2,10 @@
   "name": "00-boilerplate-ts",
   "version": "1.0.0",
   "description": "",
-  "main": "server.ts",
+  "main": "server.js",
   "scripts": {
-  “main”: “server.js”,
-“scripts”: {
-“build”: “npm install && tsc”,
-“start”: “node server.js”
+  “build”: “npm install && tsc”,
+  “start”: “node server.js”
   },
   "keywords": [],
   "author": "",
