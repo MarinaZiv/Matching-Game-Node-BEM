@@ -5,7 +5,7 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    “dist”: “npm install && tsc”,
+    “dist”: “tsc”,
    “start”: “node server.js”
   },
   },
