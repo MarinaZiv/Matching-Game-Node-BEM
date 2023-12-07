@@ -5,8 +5,9 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    “build”: “tsc”,
-   “start”: “node server.js”
+   "test": "echo \"Error: no test specified\" && exit 1",
+    “dist”: “npm install && tsc”,
+    “start”: “node server.js”
   },
   },
   "keywords": [],
