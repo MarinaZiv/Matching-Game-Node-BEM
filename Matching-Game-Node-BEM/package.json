@@ -4,8 +4,10 @@
   "description": "",
   "main": "server.ts",
   "scripts": {
-    "build": "tsc",
-    "start": "node ./dist/server.js"
+  “main”: “server.js”,
+“scripts”: {
+“build”: “npm install && tsc”,
+“start”: “node server.js”
   },
   "keywords": [],
   "author": "",
