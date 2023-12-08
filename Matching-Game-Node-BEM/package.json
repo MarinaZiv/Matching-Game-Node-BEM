@@ -11,7 +11,7 @@
   "start": "concurrently pnpm:start:*",
   "clean": "npx tsc --build --clean",
   "build": "pnpm clean && pnpm tsc",
-  "server": "node ./build/server.js"
+  "server": "node ./dist/server.js"
  
   },
   },
