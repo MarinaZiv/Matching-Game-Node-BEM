@@ -6,8 +6,8 @@
   "main": "server.ts",
   "scripts": {
    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "tsc",
-    "start": "node dist/server.js"
+   "start": "server.ts",
+    "build": "tsc"
  
   },
   },
