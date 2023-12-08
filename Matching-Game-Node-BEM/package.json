@@ -7,7 +7,7 @@
   "scripts": {
    "test": "echo \"Error: no test specified\" && exit 1",
    "start:build": "npx tsc -w",
-  "start:run": "node --watch build/server.js",
+  "start:run": "node --watch dist/server.js",
   "start": "concurrently pnpm:start:*",
   "clean": "npx tsc --build --clean",
   "build": "pnpm clean && pnpm tsc",
